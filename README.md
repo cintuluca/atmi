@@ -5,9 +5,7 @@ This project is divided into several sections, responsable of different tasks:
 
 1. Some routines to implement the atmospheric sampling according to the data.
 2. Reconstruction of the atmospheric model structure, based on the previous sampling.
-3. Calculations to determine the brightness temperature of the atmosphere, thanks to the
-* <a href="https://lweb.cfa.harvard.edu/~spaine/am/">am tool</a>
-(Atmospheric Model - CfA Harvard) for the radiative transfer computation. 
+3. Calculations to determine the brightness temperature of the atmosphere, thanks to the <a href="https://lweb.cfa.harvard.edu/~spaine/am/">am tool</a> (Atmospheric Model - CfA Harvard) for the radiative transfer computation. 
 
 Usage of the `atmi` bash script: 
 
