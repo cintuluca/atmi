@@ -30,7 +30,7 @@ List of all the possible commands:
 
 Clone the repository:
 
-`git https://github.com/cintuluca/atmi` <br/>
+`git clone https://github.com/cintuluca/atmi` <br/>
 
 Move to the `atmi` directory:
 
