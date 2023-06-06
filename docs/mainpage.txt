@@ -1,0 +1,48 @@
+/*! \mainpage Atmospheric Impact Simulation
+
+\brief ATMI (Atmospheric Impact Simulation) is a project aiming to develop a generic pipeline for the simulation of the atmospheric impact on CMB ground-based experiments. In fact, CMB observations from the ground are strongly limited by the atmosphere: its presence results in both absorption and emission of new signal. Despite the effect of the absorption of the incoming signal is negligible, atmospheric emission constitutes a noise for CMB measurements. 
+This project is divided into several sections, responsable of different tasks:
+
+1. Some routines to implement the atmospheric sampling according to the data.
+2. Reconstruction of the atmospheric model structure, based on the previous sampling.
+3. Calculations to determine the brightness temperature of the atmosphere, thanks to the
+* <a href="https://lweb.cfa.harvard.edu/~spaine/am/">am tool</a>
+(Atmospheric Model - CfA Harvard) for the radiative transfer computation. 
+
+Using a collection of data for the atmospheric realizations, it is possible to give a statistic description the behavior of the main variables, such as temperature, pressure and PWV (Precipitable Water Vapour). Those variables are useful to study the homogeneus atmosphere, in order to predict the impact on radiometric measurements.
+Thanks to the tools provided by this work, the atmospheric variables data can be used in order to describe the statistics and simulate the atmospheric behaviour and how it evolves with time. See \ref atmi for the details about each specific pipeline.
+
+\section description_main Description
+Neglecting all kinds of turbulent effects, the atmosphere can be treated using the <b>plane-parallel model</b>. According to this model, the atmosphere is divided into several overlapping homogeneous layers. Therefore each layer can be described by a group of parameters (called <b>realization</b>) that have the same value all over the layer. The most important parameters useful to describe the atmopsheric behaviour are temperature T, pressure P and precipitable water vapour PWV. Moreover each layer can be considered optically thin and in local thermodynamical equilibrium: as a consequence it is possible to solve the equation of the radiative transfer. Then the outcoming signal \f$I_{out}\f$ is calculated as a function of the incoming one \f$I_{in}\f$ as:
+
+\n
+\f[
+	I_\mathrm{out}(\nu)=B(\nu, T_\mathrm{phys,\;i})\cdot[1-e^{-\tau_i(\nu)}]+I_\mathrm{in}(\nu)\cdot e^{-\tau_i(\nu)}
+\f]
+\n
+
+where \f$B(\nu, T_\mathrm{phys,\;i})\f$ is the black body at the physical temperature of the considered layer \f$T_\mathrm{phys,\;i}\f$ and \f$\tau_i(\nu)\f$ is the optical depth associated to the layer.
+
+\n
+\image html "docs/imgs/model.jpg" "Atmospheric Model" width=40%
+\n
+
+Iterating this kind of computation for all the layers composing the whole atmosphere, it is possible to find the signal observed from the ground. In fact it is assumed that the only signal entering the atmosphere from the top is the CMB (black body at \f$2.73\;\mathrm{K}\f$). As the atmosphere is treated as a sequence of homogeneous planes, the only dependence on the angle of observation (azimuth angle \f$z\f$) is:
+
+\n
+\f[
+	T_\mathrm{atm}(z)=\frac{T_\mathrm{atm, 0}}{\cos z}
+\f]
+\n
+
+where \f$T_\mathrm{atm, 0}\f$ is the atmospheric brightness temperature at the zenith (\f$z=0\f$).
+
+\n
+\image html "docs/imgs/propagation.jpg" "Signal Propagation" width=40%
+\n
+
+In particular the statistical picture caught from the input data allows to perform the correlated sampling: in fact both temporal and intra-variables correlations are taken into accout. Thanks to this, this project can result in TODs of atmospheric relatizations. Therefore the resulting brightness temperatures maintain the correlated structures embedded in the data and could describe how the atmospheric signal evolves as time passes.
+
+\section notes_main Notes
+- This is a work in progress.
+*/

@@ -1,0 +1,22 @@
+/*!
+\package lib
+\brief Library of the project.
+
+
+\file src/lib/__init__.py
+\brief Python init file for the regular package.
+
+The file is located under atmi/src/lib.
+
+
+\dir src/lib
+\brief Directory containing the libraries, located under \ref src.
+
+
+\dir src
+\brief Directory containing the scripts and the \ref lib directory.
+
+
+\dir docs
+\brief Directory containing the project documentation files.
+*/

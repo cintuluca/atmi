@@ -1,0 +1,177 @@
+#!/bin/bash
+
+DIR=`cat ~/.atmi`
+
+EDITOR="${EDITOR:-nano}"
+
+######################
+# AUXILIARY FUNCTION #
+######################
+
+
+usage()
+{
+        echo "Usage: $0 [-p|-s|-a|-t|-i] FILE"
+        echo "Use -h option to show the help message."
+}
+
+
+######################
+
+
+method_help()
+{
+        echo "atm: script gathering many utility funtions for atmospheric analysis."
+        echo
+        echo "Usage: $0 [option] FILE"
+        echo
+        echo "FILE = configuration file."
+        echo
+        echo "Options:"
+        echo "  -p  Method PLOT: extract and plot the PDF for a given variable at a given hour of a given day of the month."
+        echo "  -s  Method SAMPLING: sample an atmosphere realization for the given dates."
+        echo "  -a  Method AM: generate the am configuration file for the given atmosphere realization an run am."
+        echo "  -t  Method TEMPERATURE: generate the am configuration file for the given atmosphere samplings an run am."
+        echo "  -i  Method INSTRUMENT: calculates the antenna temperature and does the frequency band integration."
+        echo "  -f  Method CONFIGURATION: display the configuration file format for the given method (-f METHOD)."
+        echo "  -h  Show this help"
+}
+
+
+######################
+
+
+method_plot()
+{
+	echo "Executing $DIR/src/pdfplot.py ..."
+	python3 $DIR/src/pdfplot.py $conf
+}
+
+
+######################
+
+
+method_sampling()
+{
+	echo "Executing $DIR/src/sampling.py ..."
+	python3 $DIR/src/sampling.py $conf
+}
+
+
+######################
+
+
+method_am()
+{
+	echo "Executing $DIR/src/vprofiles.py ..."
+	python3 $DIR/src/vprofiles.py $conf
+	echo
+	echo "Executing am ..."
+	name=$(tail -n 1 $conf)
+	am > /dev/null 2>&1 $DIR/am/config/$name.amc > $DIR/am/output/$name.out
+	echo "am execution has finished!"
+	echo "Output file saved in $DIR/am/output/"$name".out"
+	echo
+	echo "Executing $DIR/src/amplot.py ..."
+	python3 $DIR/src/amplot.py $name
+}
+
+
+######################
+
+
+method_temperature()
+{
+	echo "Executing $DIR/src/amconfig.py ..."
+	start=`date +%s`
+	python3 $DIR/src/amconfig.py $conf
+	echo
+	echo "Executing am ..."
+	name=$(tail -n 1 $conf)
+	while read line; do 
+		am > /dev/null 2>&1 $DIR/am/config/$line.amc > $DIR/am/output/$line.out
+		echo "$DIR/am/config/"$line".amc	->	$DIR/am/output/"$line".out"
+	done < $DIR/am/config/$name.txt
+	end=`date +%s`
+	echo Execution time was `expr $end - $start` seconds.
+}
+
+
+######################
+
+
+method_instrument()
+{
+	echo "Executing $DIR/src/Tinstrument.py ..."
+	python3 $DIR/src/Tinstrument.py $conf
+}
+
+
+######################
+
+
+method_configuration()
+{
+	if [[ $method == "plot" ]]; then
+		while read line; do echo $line; done < $DIR/config/plot/README.txt
+	elif [[ $method == "sampling" ]]; then
+		while read line; do echo $line; done < $DIR/config/sampling/README.txt
+	elif [[ $method == "am" ]]; then
+		while read line; do echo $line; done < $DIR/config/am/README.txt
+	elif [[ $method == "temperature" ]]; then
+		while read line; do echo $line; done < $DIR/config/temperature/README.txt
+	elif [[ $method == "instrument" ]]; then
+		while read line; do echo $line; done < $DIR/config/instrument/README.txt
+	fi
+}
+
+
+######################
+
+
+################################
+# ENTRY POINT - INITIALIZATION #
+################################
+
+# Check number of arguments
+if [[ $# != 1 ]] && [[ $1 == "-h" ]]; then
+        usage
+        exit 1
+fi
+
+if [[ $# != 2 ]] && [[ $1 != "-h" ]]; then
+        usage
+        exit 1
+fi
+
+# Check for correct -f option
+if [[ $1 == "-f" ]] && [[ $2 != "plot" ]] && [[ $2 != "sampling" ]] && [[ $2 != "am" ]] && [[ $2 != "temperature" ]] && [[ $2 != "instrument" ]]; then
+        usage
+        exit 1
+fi
+
+# Check that the option is only one
+# -->   -g   OK
+#       -gp  NO
+if (( ${#1} != 2 )); then
+        usage
+        exit 1
+fi
+
+# Select method from the option
+while getopts ":p:s:a:t:i:f:h" o; do
+        case $o in
+        	p) conf=${OPTARG} && method_plot && exit 0 ;;
+                s) conf=${OPTARG} && method_sampling && exit 0 ;;
+                a) conf=${OPTARG} && method_am && exit 0 ;;
+                t) conf=${OPTARG} && method_temperature && exit 0 ;;
+                i) conf=${OPTARG} && method_instrument && exit 0 ;;
+                h) method_help && exit 0;;
+                f) method=${OPTARG} && method_configuration && exit 0;;
+                #*) usage;;
+                \?) usage && exit 1;;
+        esac
+done
+
+# You must reset of the correct $OPTIND
+shift $(( $OPTIND -1 ))

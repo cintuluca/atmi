@@ -1,0 +1,45 @@
+/*!
+\file atmi
+\brief Bash script gathering all the project utilities. Usage: 
+
+```
+	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-f METHOD] [-h]
+```
+
+In the following table are described all the different options, together with the specific command to use.
+
+<table>
+<caption id="multi_row">Command options</caption>
+<tr><th>Command			<th>Name		<th>What it does?
+<tr><td>atmi -p [PATH_TO_CONFIG]	<td>Plot		<td>Extract and plot the PDF for a given variable at a given hour \n of a given day of the month (see \ref pdfplot.py for more details).
+<tr><td>atmi -s [PATH_TO_CONFIG]	<td>Sampling		<td>Sample an atmospheric realization for the given dates (see \n \ref sampling.py for more details).
+<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am			<td>Generate the am configuration file for the given atmosphere \n realization an run am (see \ref vprofiles.py for more details).
+<tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature		<td>Generate the am configuration file for the given atmosphere \n samplings (from file) an run am (see \ref amconfig.py for more \n details).
+<tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument		<td>Calculate the antenna temperature and do the frequency band \n integration (see \ref Tinstrument.py for more details).
+<tr><td>atmi -f [METHOD]	<td>Configuration	<td>Display the configuration file format for the given method.
+<tr><td>atmi -h			<td>Help		<td>Display the manual.
+</table>
+
+The file is located in the main directory of the project. It is possbile to move the file in a different path.
+
+\section config_files Configurations
+All the different methods (except ```atmi -f``` and ```atmi -h```) need a properly written configuration file in order to work. It is possible to display the configuration format with the command:
+
+```
+	atmi -f [METHOD]
+```
+
+Here below are listed all the different formats for the configuration file needed by each command, together with the description of each element.
+
+<table>
+<caption id="multi_row">Command options</caption>
+<tr><th>Method		<th>Configuration
+<tr><td>Plot	<td><b>```[1] Datafile```</b>: path to the (netCDF) file for the climatic data. \n <b>```[2] Variable```</b>: name of the variable to plot. \n <b>```[3] Month```</b>: month to consider (format ```MM```) \n <b>```[4] Day```</b>: day to consider (format ```DD```). \n <b>```[5] Hour```</b>: hour to consider (format ```HH```). \n <b>```[6] Latitude```</b>: latitude of the location to consider. \n <b>```[7] Longitude```</b>: longitude of the location to consider. \n <b>```[8] Plot Location```</b>: <b>```term```</b> to plot over the terminal, <b>```canvas```</b> to plot on an external canvas.
+<tr><td>Sampling	<td><b>```[1] Datafiles```</b>: path to the (netCDF) files for the climatic data, one for each variable. \n <b>```[2] Variables```</b>: name of the variables. \n <b>```[3] Starting Month```</b>: first month for the sampling (format ```MM```) \n <b>```[4] Starting Day```</b>: first day for the sampling (format ```DD```). \n <b>```[5] Starting Hour```</b>: first hour for the sampling (format ```HH```). \n <b>```[6] Final Month```</b>: last month for the sampling (format ```MM```) \n <b>```[7] Final Day```</b>: last day for the sampling (format ```DD```). \n <b>```[8] Final Hour```</b>: last hour for the sampling (format ```HH```). \n <b>```[9] Latitude```</b>: latitude of the location to consider. \n <b>```[10] Longitude```</b>: longitude of the location to consider. \n <b>```[11] Number of sampling```</b>: how many samplings to result in. \n <b>```[12] Filename```</b>: name of the resulting sampling files.
+<tr><td>Am		<td><b>```[1] Atmospheric Temperature```</b>: surface temperature of the atmosphere (in \f$\mathrm{K}\f$). \n <b>```[2] Atmospheric Pressure```</b>: surface pressure of the atmosphere (in \f$\mathrm{Pa}\f$). \n <b>```[3] Atmospheric PWV```</b>: precipitable water vapour of the atmosphere (in \f$\mathrm{mm}\f$). \n <b>```[4] Month```</b>: month to consider (format ```DD```). \n <b>```[5] Number of Layers```</b>: how many parts the atmosphere is divided into. \n <b>```[6] Starting Frequency```</b>: first frequency to consider (in \f$\mathrm{GHz}\f$). \n <b>```[7] Ending Frequency```</b>: last frequency to consider (in \f$\mathrm{GHz}\f$). \n <b>```[8] Frequency Interval```</b>: frequency interval to consider (in \f$\mathrm{GHz}\f$). \n <b>```[9] Filename```</b>: name to give to the resulting file. \n <b>```[10] Parameters File```</b>: path to the file containing the vertical profiles parameters. 
+<tr><td>Temperature	<td><b>```[1] Sampling File```</b>: path to the sampling file. \n <b>```[2] Number of Layers```</b>: how many parts the atmosphere is divided into. \n <b>```[3] Starting Frequency```</b>: first frequency to consider (in \f$\mathrm{GHz}\f$). \n <b>```[4] Ending Frequency```</b>: last frequency to consider (in \f$\mathrm{GHz}\f$). \n <b>```[5] Frequency Interval```</b>: frequency interval to consider (in \f$\mathrm{GHz}\f$). \n <b>```[6] Filename```</b>: name to give to the resulting file. \n <b>```[7] Parameters File```</b>: path to the file containing the vertical profiles parameters. 
+<tr><td>Instrument	<td><b>```[1] Spectrum File/s```</b>: name of the spectrum file/s to consider (in the directory ```am/outputs```). \n <b>```[2] Theta Pointing```</b>: azimuth angle of the pointing (in \f$\mathrm{deg}\f$). \n <b>```[3] Antenna FWHM```</b>: FWHM of the instrument (in \f$\mathrm{deg}\f$). \n <b>```[4] Starting Frequency```</b>: first frequency of the instrument band (in \f$\mathrm{GHz}\f$). \n <b>```[5] Ending Frequency```</b>: last frequency of the instrument band (in \f$\mathrm{GHz}\f$).
+</table>
+
+The number before each configuration parameter is the line number: it's important to respect the order for the command to execute as intended.
+*/
