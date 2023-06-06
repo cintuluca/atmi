@@ -19,11 +19,11 @@ List of all the possible commands:
 
 <table>
 <tr><th>Command			            <th>Name		    <th>What it does?
-<tr><td>atmi -p [PATH_TO_CONFIG]	<td>Plot	   	    <td>Extract and plot the PDF for a given variable at a given hour of a given day of the month (see \ref pdfplot.py for more details).
-<tr><td>atmi -s [PATH_TO_CONFIG]	<td>Sampling	    <td>Sample an atmospheric realization for the given dates (see \ref sampling.py for more details).
-<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am		        <td>Generate the am configuration file for the given atmosphere realization an run am (see \ref vprofiles.py for more details).
-<tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature	    <td>Generate the am configuration file for the given atmosphere samplings (from file) an run am (see \ref amconfig.py for more details).
-<tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument      <td>Calculate the antenna temperature and do the frequency band integration (see \ref Tinstrument.py for more details).
+<tr><td>atmi -p [PATH_TO_CONFIG]	<td>Plot	   	    <td>Extract and plot the PDF for a given variable at a given hour of a given day of the month (see the documentation for more details).
+<tr><td>atmi -s [PATH_TO_CONFIG]	<td>Sampling	    <td>Sample an atmospheric realization for the given dates (see the documentation for more details).
+<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am		        <td>Generate the am configuration file for the given atmosphere realization an run am (see the documentation for more details).
+<tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature	    <td>Generate the am configuration file for the given atmosphere samplings (from file) an run am (see the documentation for more details).
+<tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument      <td>Calculate the antenna temperature and do the frequency band integration (see the documentation for more details).
 <tr><td>atmi -f [METHOD]	        <td>Configuration   <td>Display the configuration file format for the given method.
 <tr><td>atmi -h			            <td>Help		    <td>Display the manual.
 </table>
