@@ -28,7 +28,7 @@ List of all the possible commands:
 <tr><td>atmi -h			            <td>Help		    <td>Display the manual.
 </table>
 
-# How to set-up
+# How to set up
 
 Clone the repository:
 
