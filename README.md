@@ -9,7 +9,7 @@ This project is divided into several sections, responsable of different tasks:
 * <a href="https://lweb.cfa.harvard.edu/~spaine/am/">am tool</a>
 (Atmospheric Model - CfA Harvard) for the radiative transfer computation. 
 
-Usage of the `atmi` <br/> bash script: 
+Usage of the `atmi` bash script: 
 
 ```
 	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-f METHOD] [-h]
@@ -18,14 +18,14 @@ Usage of the `atmi` <br/> bash script:
 List of all the possible commands:
 
 <table>
-<tr><th>Command			<th>Name		<th>What it does?
-<tr><td>atmi -p [PATH_TO_CONFIG]	<td>Plot		<td>Extract and plot the PDF for a given variable at a given hour \n of a given day of the month (see \ref pdfplot.py for more details).
-<tr><td>atmi -s [PATH_TO_CONFIG]	<td>Sampling		<td>Sample an atmospheric realization for the given dates (see \n \ref sampling.py for more details).
-<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am			<td>Generate the am configuration file for the given atmosphere \n realization an run am (see \ref vprofiles.py for more details).
-<tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature		<td>Generate the am configuration file for the given atmosphere \n samplings (from file) an run am (see \ref amconfig.py for more \n details).
-<tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument		<td>Calculate the antenna temperature and do the frequency band \n integration (see \ref Tinstrument.py for more details).
-<tr><td>atmi -f [METHOD]	<td>Configuration	<td>Display the configuration file format for the given method.
-<tr><td>atmi -h			<td>Help		<td>Display the manual.
+<tr><th>Command			            <th>Name		    <th>What it does?
+<tr><td>atmi -p [PATH_TO_CONFIG]	<td>Plot	   	    <td>Extract and plot the PDF for a given variable at a given hour of a given day of the month (see \ref pdfplot.py for more details).
+<tr><td>atmi -s [PATH_TO_CONFIG]	<td>Sampling	    <td>Sample an atmospheric realization for the given dates (see \ref sampling.py for more details).
+<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am		        <td>Generate the am configuration file for the given atmosphere realization an run am (see \ref vprofiles.py for more details).
+<tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature	    <td>Generate the am configuration file for the given atmosphere samplings (from file) an run am (see \ref amconfig.py for more details).
+<tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument      <td>Calculate the antenna temperature and do the frequency band integration (see \ref Tinstrument.py for more details).
+<tr><td>atmi -f [METHOD]	        <td>Configuration   <td>Display the configuration file format for the given method.
+<tr><td>atmi -h			            <td>Help		    <td>Display the manual.
 </table>
 
 # How to set-up
@@ -34,7 +34,7 @@ Clone the repository:
 
 `git https://github.com/cintuluca/atmi` <br/>
 
-Move to the `atmi` <br/> directory:
+Move to the `atmi` directory:
 
 `cd atmi` <br/>
 
@@ -42,7 +42,7 @@ Run the initialization script:
 
 `./init.sh` <br/>
 
-The `atmi` <br/> bash script can be moved anywhere but anytime the `atmi` <br/> directory is moved, you need to move into the directory and run again the initialization script `./init.sh` <br/>.
+The `atmi` bash script can be moved anywhere but anytime the `atmi` directory is moved, you need to move into the directory and run again the initialization script `./init.sh`.
 
 ## ATMI requirements:
 
