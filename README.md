@@ -26,6 +26,8 @@ List of all the possible commands:
 <tr><td>atmi -h			            <td>Help		    <td>Display the manual.
 </table>
 
+In order to install <i>am</i> you can download it from <a href="https://zenodo.org/record/6774378">here</a> and follow the instructions of the <a href="https://zenodo.org/record/6774376">manual</a>.
+
 # How to set up
 
 Clone the repository:
