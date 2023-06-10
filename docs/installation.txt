@@ -1,4 +1,4 @@
-/*! \page Installation
+/*! \page installation Installation
 
 Clone the github repository:
 
