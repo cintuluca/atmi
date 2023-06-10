@@ -28,6 +28,8 @@ List of all the possible commands:
 
 In order to install <i>am</i> you can download it from <a href="https://zenodo.org/record/6774378">here</a> and follow the instructions on the <a href="https://zenodo.org/record/6774376">manual</a>.
 
+Doxygen with auto deployment has been setup in this repository. The documentation for this repository is available at https://cintuluca.github.io/atmi/
+
 # How to set up
 
 Clone the repository:
