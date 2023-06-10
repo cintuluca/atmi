@@ -1,0 +1,16 @@
+/*! \page Installation
+
+Clone the github repository:
+
+`git clone https://github.com/cintuluca/atmi` <br/>
+
+Move to the `atmi` directory:
+
+`cd atmi` <br/>
+
+Run the initialization script:
+
+`./init.sh` <br/>
+
+The `atmi` bash script can be moved anywhere but anytime the `atmi` directory is moved, you need to move into the directory and run again the initialization script `./init.sh`.
+*/
