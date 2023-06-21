@@ -13,6 +13,10 @@ import pandas as pd
 import sys
 from tqdm import tqdm
 
+# physical constants
+hP = 6.626e-34
+Kb = 1.38e-23
+
 with open(os.path.expanduser('~')+'/.atmi') as file:
     DIR = file.readline().strip('\n')   # Global path of the project
 
@@ -56,10 +60,13 @@ for i in tqdm(range(len(files)), desc='Loading ...'):
     T = np.array(df[(df['Freq'] >= freq1) & (df['Freq'] <= freq2)]['Tb'])
     freq = np.array(df[(df['Freq'] >= freq1) & (df['Freq'] <= freq2)]['Freq'])
     alpha = np.array(df[(df['Freq'] >= freq1) & (df['Freq'] <= freq2)]['Abs'])
+    
+    T_RJ = hP*freq / (Kb*(np.exp(hP*freq / (Kb*T)) - 1))     # from Plank to RJ brightness
+    
     band = np.zeros(len(freq)) + 1 # top-hat
     Pn = instrumentObs.Pn_gaussian(theta, theta0, FWHM)    # gaussian normalized antenna pattern
     obs = instrumentObs.instrument(theta, Pn, freq, band)
-    Tatm.append(obs.observation(T - 2.7*alpha))
+    Tatm.append(obs.observation(T_RJ - 2.7*alpha))
     mdh = file.replace(spectrumfile, '').replace('.out', '')
     m.append(mdh[0:2]), d.append(mdh[2:4]), h.append(mdh[4:6]) 
     
