@@ -61,7 +61,7 @@ for i in tqdm(range(len(files)), desc='Loading ...'):
     freq = np.array(df[(df['Freq'] >= freq1) & (df['Freq'] <= freq2)]['Freq'])
     alpha = np.array(df[(df['Freq'] >= freq1) & (df['Freq'] <= freq2)]['Abs'])
     
-    T_RJ = hP*freq / (Kb*(np.exp(hP*freq / (Kb*T)) - 1))     # from Plank to RJ brightness
+    T_RJ = hP*(freq*1e9) / (Kb*(np.exp(hP*(freq*1e9) / (Kb*T)) - 1))     # from Plank to RJ brightness
     
     band = np.zeros(len(freq)) + 1 # top-hat
     Pn = instrumentObs.Pn_gaussian(theta, theta0, FWHM)    # gaussian normalized antenna pattern
