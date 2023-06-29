@@ -51,10 +51,9 @@ def profiles(paramsfile, T0, P0, PWV, month, N):
 	params = np.loadtxt(paramsfile, skiprows=4)
 	Ht, a1, a2, b1, b2, Hp, Hw, hT0, hP0, hW0, hsite = params[int(month-1)]
 	Z = hsite + np.linspace(0, 30, num=N)
-	T0 = T0 - a1*hT0**2 - b1*hT0**2
+	T0 = T0 - a1*hT0**2 - b1*hT0
 	P0 = P0*np.exp(hP0/Hp)
-	PWV0 = np.abs(PWV)/np.sum(np.exp(-(Z-hsite)/Hw))
-	PWV0 = PWV0*np.exp(hW0/Hw)
+	PWV0 = np.abs(PWV) * np.exp(hW0/Hw) /np.sum(np.exp(-(Z-hsite)/Hw))
 	c2 = a1*Ht**2+b1*Ht+T0
 	T1 = a1*Z**2+b1*Z+T0
 	T2 = a2*(Z-Ht)**2+b2*(Z-Ht)+c2
