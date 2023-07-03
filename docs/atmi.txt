@@ -6,7 +6,7 @@
 	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-f METHOD] [-h]
 ```
 
-In the following table are described all the different options, together with the specific command to us.
+In the following table are described all the different options, together with the specific command to use.
 
 <table>
 <caption id="commands">Command options</caption>
