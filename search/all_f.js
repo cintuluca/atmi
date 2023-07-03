@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['t_0',['T',['../namespaceamtotalrun.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'amtotalrun']]],
-  ['t0_1',['T0',['../namespaceamtotalrun.html#a29a7b7ac56a2fb82138e94b8cef7a49f',1,'amtotalrun']]],
-  ['tantenna_2',['Tantenna',['../classlib_1_1instrumentObs_1_1instrument.html#a08cc0e1ce2f7a4633243b1973bfc212c',1,'lib::instrumentObs::instrument']]],
-  ['tazimuth_3',['Tazimuth',['../namespacelib_1_1instrumentObs.html#a60e30d917052ef22aef603055eb962f9',1,'lib::instrumentObs']]],
-  ['termplot_5fpdf_4',['termplot_pdf',['../classlib_1_1atmsampling_1_1variable.html#a65ddb358722ce042c5a1bcbc06214b82',1,'lib::atmsampling::variable']]],
-  ['tinstrument_2epy_5',['Tinstrument.py',['../Tinstrument_8py.html',1,'']]]
+  ['values_0',['values',['../classlib_1_1atmsampling_1_1variable.html#a7b6bc2414e0cc8dd1cb020560e19ad4f',1,'lib.atmsampling.variable.values'],['../classlib_1_1atmsampling_1_1atmosphere.html#a7b6bc2414e0cc8dd1cb020560e19ad4f',1,'lib.atmsampling.atmosphere.values'],['../classlib_1_1atmsampling_1_1samplings.html#a7b6bc2414e0cc8dd1cb020560e19ad4f',1,'lib.atmsampling.samplings.values'],['../classlib_1_1netCDFutils_1_1data.html#ab97e83198d6e82987dd55cb87a305bb8',1,'lib.netCDFutils.data.values()']]],
+  ['variable_1',['variable',['../classlib_1_1atmsampling_1_1variable.html',1,'lib::atmsampling']]],
+  ['variables_2',['variables',['../classlib_1_1atmsampling_1_1atmosphere.html#a626e63c7be6e71872233832cce1dccc0',1,'lib.atmsampling.atmosphere.variables'],['../classlib_1_1netCDFutils_1_1data.html#a59af9e0b3dc3ba183221eb2f08710591',1,'lib.netCDFutils.data.variables()']]],
+  ['vprofiles_2epy_3',['vprofiles.py',['../vprofiles_8py.html',1,'']]]
 ];
