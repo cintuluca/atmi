@@ -33,6 +33,7 @@ method_help()
         echo "  -a  Method AM: generate the am configuration file for the given atmosphere realization an run am."
         echo "  -t  Method TEMPERATURE: generate the am configuration file for the given atmosphere samplings an run am."
         echo "  -i  Method INSTRUMENT: calculates the antenna temperature and does the frequency band integration."
+        echo "  -r  Method RUN: generate the am configuration file for the atmospheric realization from a data archive an run am."
         echo "  -f  Method CONFIGURATION: display the configuration file format for the given method (-f METHOD)."
         echo "  -h  Show this help"
 }
@@ -110,6 +111,26 @@ method_instrument()
 ######################
 
 
+method_run()
+{
+	echo "Executing $DIR/src/amtotalrun.py ..."
+	start=`date +%s`
+	python3 $DIR/src/amtotalrun.py $conf
+	echo
+	echo "Executing am ..."
+	name=$(tail -n 1 $conf)
+	while read line; do 
+		am > /dev/null 2>&1 $DIR/am/config/$line.amc > $DIR/am/output/$line.out
+		echo "$DIR/am/config/"$line".amc	->	$DIR/am/output/"$line".out"
+	done < $DIR/am/config/$name.txt
+	end=`date +%s`
+	echo Execution time was `expr $end - $start` seconds.
+}
+
+
+######################
+
+
 method_configuration()
 {
 	if [[ $method == "plot" ]]; then
@@ -122,6 +143,8 @@ method_configuration()
 		while read line; do echo $line; done < $DIR/config/temperature/README.txt
 	elif [[ $method == "instrument" ]]; then
 		while read line; do echo $line; done < $DIR/config/instrument/README.txt
+	elif [[ $method == "run" ]]; then
+		while read line; do echo $line; done < /usr/local/lib/atmi/config/run/README.txt
 	fi
 }
 
@@ -145,7 +168,7 @@ if [[ $# != 2 ]] && [[ $1 != "-h" ]]; then
 fi
 
 # Check for correct -f option
-if [[ $1 == "-f" ]] && [[ $2 != "plot" ]] && [[ $2 != "sampling" ]] && [[ $2 != "am" ]] && [[ $2 != "temperature" ]] && [[ $2 != "instrument" ]]; then
+if [[ $1 == "-f" ]] && [[ $2 != "plot" ]] && [[ $2 != "sampling" ]] && [[ $2 != "am" ]] && [[ $2 != "temperature" ]] && [[ $2 != "instrument" ]] && [[ $2 != "run" ]]; then
         usage
         exit 1
 fi
@@ -166,6 +189,7 @@ while getopts ":p:s:a:t:i:f:h" o; do
                 a) conf=${OPTARG} && method_am && exit 0 ;;
                 t) conf=${OPTARG} && method_temperature && exit 0 ;;
                 i) conf=${OPTARG} && method_instrument && exit 0 ;;
+                r) conf=${OPTARG} && method_run && exit 0 ;;
                 h) method_help && exit 0;;
                 f) method=${OPTARG} && method_configuration && exit 0;;
                 #*) usage;;
