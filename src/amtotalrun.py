@@ -1,3 +1,10 @@
+## @file src/amtotalrun.py
+# @brief Generator of the am configuration file for the real data.
+#
+# Python script necessary to calculate the vertical profiles of the atmospheric real data and write the am configuration file.
+#
+# The file is located under atmi/src.
+
 from lib import amutils
 from datetime import datetime
 from lib import netCDFutils

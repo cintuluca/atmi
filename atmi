@@ -30,10 +30,10 @@ method_help()
         echo "Options:"
         echo "  -p  Method PLOT: extract and plot the PDF for a given variable at a given hour of a given day of the month."
         echo "  -s  Method SAMPLING: sample an atmosphere realization for the given dates."
-        echo "  -a  Method AM: generate the am configuration file for the given atmosphere realization an run am."
-        echo "  -t  Method TEMPERATURE: generate the am configuration file for the given atmosphere samplings an run am."
+        echo "  -a  Method AM: generate the am configuration file for the given atmosphere realization and run am."
+        echo "  -t  Method TEMPERATURE: generate the am configuration file for the given atmosphere samplings and run am."
         echo "  -i  Method INSTRUMENT: calculates the antenna temperature and does the frequency band integration."
-        echo "  -r  Method RUN: generate the am configuration file for the atmospheric realization from a data archive an run am."
+        echo "  -r  Method RUN: generate the am configuration file for the atmospheric realization from a data archive and run am."
         echo "  -f  Method CONFIGURATION: display the configuration file format for the given method (-f METHOD)."
         echo "  -h  Show this help"
 }

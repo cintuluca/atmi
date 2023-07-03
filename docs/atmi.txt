@@ -13,7 +13,7 @@ In the following table are described all the different options, together with th
 <tr><th>Command			<th>Name		<th>What it does?
 <tr><td>atmi -p [PATH_TO_CONFIG]	<td>Plot		<td>Extract and plot the PDF for a given variable at a given hour \n of a given day of the month (see \ref pdfplot.py for more details).
 <tr><td>atmi -s [PATH_TO_CONFIG]	<td>Sampling		<td>Sample an atmospheric realization for the given dates (see \n \ref sampling.py for more details).
-<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am			<td>Generate the am configuration file for the given atmosphere \n realization an run am (see \ref vprofiles.py for more details).
+<tr><td>atmi -a [PATH_TO_CONFIG]	<td>Am			<td>Generate the am configuration file for the given atmosphere \n realization and run am (see \ref vprofiles.py for more details).
 <tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature		<td>Generate the am configuration file for the given atmosphere \n samplings (from file) and run am (see \ref amconfig.py for more \n details).
 <tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument		<td>Calculate the antenna temperature and do the frequency band \n integration (see \ref Tinstrument.py for more details).
 <tr><td>atmi -r [PATH_TO_CONFIG]	<td>Run			<td>Generate the am configuration file for the atmosphere realizations \n in the given data archive and run am (see \ref amtotalrun.py for more \n details).
