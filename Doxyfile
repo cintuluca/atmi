@@ -15,7 +15,7 @@
 #
 # Note:
 #
-# Use doxygen to compare the used configuration file with the template
+# Use doxygen to compare the used configuration file with the templat
 # configuration file:
 # doxygen -x [configFile]
 # Use doxygen to compare the used configuration file with the template
