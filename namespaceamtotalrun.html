@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ATMI - Atmospheric Impact Simulation: src/amtotalrun.py File Reference</title>
+<title>ATMI - Atmospheric Impact Simulation: amtotalrun Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,27 +75,14 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">amtotalrun.py File Reference</div></div>
+  <div class="headertitle"><div class="title">amtotalrun Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Generator of the am configuration file for the real data.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceamtotalrun"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamtotalrun.html">amtotalrun</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:afd0d0b39273983b67fd0a72a82a6bb5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamtotalrun.html#afd0d0b39273983b67fd0a72a82a6bb5b">args</a> = f.readlines()</td></tr>
@@ -188,11 +175,621 @@ Variables</h2></td></tr>
 <tr class="memitem:adc18d83abfd9f87d396e8fd6b6ac0fe1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamtotalrun.html#adc18d83abfd9f87d396e8fd6b6ac0fe1">Z</a></td></tr>
 <tr class="separator:adc18d83abfd9f87d396e8fd6b6ac0fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Generator of the am configuration file for the real data. </p>
-<p>Python script necessary to calculate the vertical profiles of the atmospheric real data and write the am configuration file.</p>
-<p>The file is located under atmi/src. </p>
-</div></div><!-- contents -->
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="afd0d0b39273983b67fd0a72a82a6bb5b" name="afd0d0b39273983b67fd0a72a82a6bb5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0d0b39273983b67fd0a72a82a6bb5b">&#9670;&#160;</a></span>args</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list args = f.readlines()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9add2159c1e3bc868da5b442ab23f7c7" name="a9add2159c1e3bc868da5b442ab23f7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9add2159c1e3bc868da5b442ab23f7c7">&#9670;&#160;</a></span>conf_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">conf_file = sys.argv[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reading the configuration file. </p>
+
+</div>
+</div>
+<a id="a1aabac6d068eef6a7bad3fdf50a05cc8" name="a1aabac6d068eef6a7bad3fdf50a05cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aabac6d068eef6a7bad3fdf50a05cc8">&#9670;&#160;</a></span>d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">d</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a511ae0b1c13f95e5f08f1a0dd3da3d93" name="a511ae0b1c13f95e5f08f1a0dd3da3d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511ae0b1c13f95e5f08f1a0dd3da3d93">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">data = netCDFutils.data(<a class="el" href="namespaceamtotalrun.html#abc2ef085bebefbec5c091667badfe7cc">datafiles</a>[i])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f6f2bf1f0dd05905a468336fd59ce41" name="a2f6f2bf1f0dd05905a468336fd59ce41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f6f2bf1f0dd05905a468336fd59ce41">&#9670;&#160;</a></span>data_loc_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list data_loc_time = <a class="el" href="namespaceamtotalrun.html#a2806bd4f4811960000fa46753d418de8">datas</a>[0].dataset.sel(time=<a class="el" href="namespaceamtotalrun.html#afea7afcdff14d88cda747d138e0f56bc">dates</a>, longitude=<a class="el" href="namespaceamtotalrun.html#ab06a4b267b1033bd3d5ca43b757b7653">lon</a>, latitude=<a class="el" href="namespaceamtotalrun.html#abc5aa76a6d1e1812e4a79fa9c461dc75">lat</a>, method='nearest')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc2ef085bebefbec5c091667badfe7cc" name="abc2ef085bebefbec5c091667badfe7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc2ef085bebefbec5c091667badfe7cc">&#9670;&#160;</a></span>datafiles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">datafiles = datafiles.split(',')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2806bd4f4811960000fa46753d418de8" name="a2806bd4f4811960000fa46753d418de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2806bd4f4811960000fa46753d418de8">&#9670;&#160;</a></span>datas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list datas = []</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializing the realizations. </p>
+
+</div>
+</div>
+<a id="aac2f5815db99de97c86bcb46d89dbcec" name="aac2f5815db99de97c86bcb46d89dbcec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2f5815db99de97c86bcb46d89dbcec">&#9670;&#160;</a></span>date</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str date = str(<a class="el" href="namespaceamtotalrun.html#a2fb1c5cf58867b5bbc9a1b145a86f3a0">y</a>)+'_'+str(<a class="el" href="namespaceamtotalrun.html#ab3cd915d758008bd19d0f2428fbb354a">m</a>)+'_'+str(<a class="el" href="namespaceamtotalrun.html#a1aabac6d068eef6a7bad3fdf50a05cc8">d</a>)+'_'+str(<a class="el" href="namespaceamtotalrun.html#a5e36941b3d856737e81516acd45edc50">h</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6109192f543c1bd8f614cfca505436e2" name="a6109192f543c1bd8f614cfca505436e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6109192f543c1bd8f614cfca505436e2">&#9670;&#160;</a></span>date1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">date1 = np.datetime64(str(<a class="el" href="namespaceamtotalrun.html#a9f6784f1dcef17520115411c48165464">year1</a>)+'-01-01T00')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8081e03a73cf0b6fb71db79c9de50a0a" name="a8081e03a73cf0b6fb71db79c9de50a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8081e03a73cf0b6fb71db79c9de50a0a">&#9670;&#160;</a></span>date2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">date2 = np.datetime64(str(<a class="el" href="namespaceamtotalrun.html#a08404e2f5132fb2e9c8f8c726d4f6dbb">year2</a>)+'-12-31T23')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afea7afcdff14d88cda747d138e0f56bc" name="afea7afcdff14d88cda747d138e0f56bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea7afcdff14d88cda747d138e0f56bc">&#9670;&#160;</a></span>dates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list dates = []</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aafc566bb08a9f46485e7238669581c2b" name="aafc566bb08a9f46485e7238669581c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc566bb08a9f46485e7238669581c2b">&#9670;&#160;</a></span>desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49eb6ac4643553d04b85c70646c6786d" name="a49eb6ac4643553d04b85c70646c6786d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49eb6ac4643553d04b85c70646c6786d">&#9670;&#160;</a></span>DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DIR = file.readline().strip('\n')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40a5d58ffa6e88aa578d6683ac413105" name="a40a5d58ffa6e88aa578d6683ac413105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a5d58ffa6e88aa578d6683ac413105">&#9670;&#160;</a></span>file</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">file = open(<a class="el" href="namespaceamtotalrun.html#a49eb6ac4643553d04b85c70646c6786d">DIR</a>+'/am/config/'+<a class="el" href="namespaceamtotalrun.html#a2ff994e16bf9521154de4cf659a3b689">filename</a>+'.txt', 'w')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saving all the configuration files. </p>
+
+</div>
+</div>
+<a id="a2ff994e16bf9521154de4cf659a3b689" name="a2ff994e16bf9521154de4cf659a3b689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff994e16bf9521154de4cf659a3b689">&#9670;&#160;</a></span>filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">filename</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8e686ecb9c3acb997a29961f7903317" name="ab8e686ecb9c3acb997a29961f7903317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e686ecb9c3acb997a29961f7903317">&#9670;&#160;</a></span>final_year</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">final_year = np.min(<a class="el" href="namespaceamtotalrun.html#a9e01b8a2288225ef561db30d0d014f06">final_years</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e01b8a2288225ef561db30d0d014f06" name="a9e01b8a2288225ef561db30d0d014f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e01b8a2288225ef561db30d0d014f06">&#9670;&#160;</a></span>final_years</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">final_years</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a25b5e0aaa0a4d82da61129d1b5b800" name="a7a25b5e0aaa0a4d82da61129d1b5b800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a25b5e0aaa0a4d82da61129d1b5b800">&#9670;&#160;</a></span>freq_interval</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">freq_interval</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a985d1914762f532058470cf5b965cd36" name="a985d1914762f532058470cf5b965cd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a985d1914762f532058470cf5b965cd36">&#9670;&#160;</a></span>freq_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">freq_start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a27ca875682c415f6e9329708754f69" name="a6a27ca875682c415f6e9329708754f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a27ca875682c415f6e9329708754f69">&#9670;&#160;</a></span>freq_stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">freq_stop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e36941b3d856737e81516acd45edc50" name="a5e36941b3d856737e81516acd45edc50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e36941b3d856737e81516acd45edc50">&#9670;&#160;</a></span>h</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">h</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c3edcca90e39ce21eaa51d53e1ad057" name="a6c3edcca90e39ce21eaa51d53e1ad057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c3edcca90e39ce21eaa51d53e1ad057">&#9670;&#160;</a></span>hours</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple hours = (<a class="el" href="namespaceamtotalrun.html#a8081e03a73cf0b6fb71db79c9de50a0a">date2</a> - <a class="el" href="namespaceamtotalrun.html#a6109192f543c1bd8f614cfca505436e2">date1</a>) // np.timedelta64(1,'<a class="el" href="namespaceamtotalrun.html#a5e36941b3d856737e81516acd45edc50">h</a>')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc5aa76a6d1e1812e4a79fa9c461dc75" name="abc5aa76a6d1e1812e4a79fa9c461dc75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc5aa76a6d1e1812e4a79fa9c461dc75">&#9670;&#160;</a></span>lat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab06a4b267b1033bd3d5ca43b757b7653" name="ab06a4b267b1033bd3d5ca43b757b7653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab06a4b267b1033bd3d5ca43b757b7653">&#9670;&#160;</a></span>lon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lon</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3cd915d758008bd19d0f2428fbb354a" name="ab3cd915d758008bd19d0f2428fbb354a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3cd915d758008bd19d0f2428fbb354a">&#9670;&#160;</a></span>m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">m</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8cc2e7240164328fdc3f0e5e21032c56" name="a8cc2e7240164328fdc3f0e5e21032c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc2e7240164328fdc3f0e5e21032c56">&#9670;&#160;</a></span>N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">N = int(N)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d9df0b08f5a808d295f7a8335151070" name="a7d9df0b08f5a808d295f7a8335151070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9df0b08f5a808d295f7a8335151070">&#9670;&#160;</a></span>names</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">names = data.variables()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4baee84af7a92177c9064ddc2fc010ce" name="a4baee84af7a92177c9064ddc2fc010ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4baee84af7a92177c9064ddc2fc010ce">&#9670;&#160;</a></span>P</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">P</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af41cd400ef5e4fa8d8c9197f185bb7e3" name="af41cd400ef5e4fa8d8c9197f185bb7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41cd400ef5e4fa8d8c9197f185bb7e3">&#9670;&#160;</a></span>P0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">P0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa324016561559a6405b065db9cee976" name="afa324016561559a6405b065db9cee976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa324016561559a6405b065db9cee976">&#9670;&#160;</a></span>paramsfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">paramsfile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cb52e3b0bcc78030f0530e9b3646a6b" name="a4cb52e3b0bcc78030f0530e9b3646a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cb52e3b0bcc78030f0530e9b3646a6b">&#9670;&#160;</a></span>PWV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PWV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af731fe3066d327fd7bcc3614ba778b8e" name="af731fe3066d327fd7bcc3614ba778b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af731fe3066d327fd7bcc3614ba778b8e">&#9670;&#160;</a></span>pwv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pwv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46bf32b91a075847b9c0f46df3e57f70" name="a46bf32b91a075847b9c0f46df3e57f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46bf32b91a075847b9c0f46df3e57f70">&#9670;&#160;</a></span>realizations</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">realizations = pd.DataFrame(<a class="el" href="namespaceamtotalrun.html#ac0098410f50f1504edfc8a13bd520536">variables</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a212d5d4008a2f6c316cd4716c527fe8f" name="a212d5d4008a2f6c316cd4716c527fe8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a212d5d4008a2f6c316cd4716c527fe8f">&#9670;&#160;</a></span>starting_year</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">starting_year = np.max(<a class="el" href="namespaceamtotalrun.html#ae94721fcea103b32f7ff32c3cb71faf0">starting_years</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae94721fcea103b32f7ff32c3cb71faf0" name="ae94721fcea103b32f7ff32c3cb71faf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae94721fcea103b32f7ff32c3cb71faf0">&#9670;&#160;</a></span>starting_years</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">starting_years</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf1f3edb9115acb0a1e04209b7a9937b" name="adf1f3edb9115acb0a1e04209b7a9937b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf1f3edb9115acb0a1e04209b7a9937b">&#9670;&#160;</a></span>T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29a7b7ac56a2fb82138e94b8cef7a49f" name="a29a7b7ac56a2fb82138e94b8cef7a49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a7b7ac56a2fb82138e94b8cef7a49f">&#9670;&#160;</a></span>T0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">T0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a335628f2e9085305224b4f9cc6e95ed5" name="a335628f2e9085305224b4f9cc6e95ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335628f2e9085305224b4f9cc6e95ed5">&#9670;&#160;</a></span>var</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">var = var.split(',')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0098410f50f1504edfc8a13bd520536" name="ac0098410f50f1504edfc8a13bd520536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0098410f50f1504edfc8a13bd520536">&#9670;&#160;</a></span>variables</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dict variables</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><span class="lineno">    1</span>=  {<span class="stringliteral">&#39;year&#39;</span>: pd.to_datetime(data_loc_time[<span class="stringliteral">&#39;time&#39;</span>].values).year,</div>
+<div class="line"><span class="lineno">    2</span>    <span class="stringliteral">&#39;month&#39;</span>: pd.to_datetime(data_loc_time[<span class="stringliteral">&#39;time&#39;</span>].values).month,</div>
+<div class="line"><span class="lineno">    3</span>    <span class="stringliteral">&#39;day&#39;</span>: pd.to_datetime(data_loc_time[<span class="stringliteral">&#39;time&#39;</span>].values).day,</div>
+<div class="line"><span class="lineno">    4</span>    <span class="stringliteral">&#39;hour&#39;</span>: pd.to_datetime(data_loc_time[<span class="stringliteral">&#39;time&#39;</span>].values).hour</div>
+<div class="line"><span class="lineno">    5</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2fb1c5cf58867b5bbc9a1b145a86f3a0" name="a2fb1c5cf58867b5bbc9a1b145a86f3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fb1c5cf58867b5bbc9a1b145a86f3a0">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f6784f1dcef17520115411c48165464" name="a9f6784f1dcef17520115411c48165464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6784f1dcef17520115411c48165464">&#9670;&#160;</a></span>year1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">year1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08404e2f5132fb2e9c8f8c726d4f6dbb" name="a08404e2f5132fb2e9c8f8c726d4f6dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08404e2f5132fb2e9c8f8c726d4f6dbb">&#9670;&#160;</a></span>year2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">year2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc18d83abfd9f87d396e8fd6b6ac0fe1" name="adc18d83abfd9f87d396e8fd6b6ac0fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc18d83abfd9f87d396e8fd6b6ac0fe1">&#9670;&#160;</a></span>Z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
