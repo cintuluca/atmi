@@ -10,7 +10,7 @@ This project is divided into several sections, responsable of different tasks:
 Usage of the `atmi` bash script: 
 
 ```
-	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-f METHOD] [-h]
+	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-r PATH_TO_CONFIG] [-f METHOD] [-h]
 ```
 
 List of all the possible commands:

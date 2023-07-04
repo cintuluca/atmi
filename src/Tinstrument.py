@@ -83,7 +83,7 @@ if os.path.exists(DIR+'/outputs/instrument/'+spectrumfile+'.csv') == True:
 
 with open(DIR+'/outputs/instrument/'+spectrumfile+'.csv', 'a') as f:
 	f.write('# '+str(datetime.now())+'\n\n')
-	df.to_csv(f)
+	df.to_csv(f, index=False)
     
 print('Results saved in '+DIR+'/outputs/instrument/'+spectrumfile+'.csv!')
 ####################################
