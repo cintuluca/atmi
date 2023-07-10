@@ -24,15 +24,15 @@ if os.path.exists(config) == False:
 with open(config) as f:
 	args = f.readlines()
 	args = [arg.rstrip('\n') for arg in args]
-samplingfile, N, freq_start, freq_stop, freq_interval, paramsfile, filename = args
+samplingfile, N, freq_start, freq_stop, freq_interval, filename, paramsfile = args
 
 print('Sampling File\t->\t', samplingfile)
 print('Number of Layers\t->\t', N)
 print('Starting Frequency\t->\t', freq_start, 'GHz')
 print('Ending Frequency\t->\t', freq_stop, 'GHz')
 print('Frequency Interval\t->\t', freq_interval, 'GHz')
-print('Parameters File\t->\t', paramsfile)
 print('Filename\t\t->\t', filename)
+print('Parameters File\t->\t', paramsfile)
 
 N, freq_start, freq_stop, freq_interval = [int(N), float(freq_start), float(freq_stop), float(freq_interval)]
 #################################

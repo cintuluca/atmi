@@ -26,7 +26,7 @@ if os.path.exists(conf_file) == False:
 with open(conf_file) as f:
 	args = f.readlines()
 	args = [arg.rstrip('\n') for arg in args]
-datafiles, var, year1, year2, lat, lon, N ,freq_start, freq_stop, freq_interval, filename, paramsfile = args
+datafiles, var, year1, year2, lat, lon, N ,freq_start, freq_stop, freq_interval, paramsfile, filename = args
 datafiles = datafiles.split(',')
 var = var.split(',')
 
@@ -70,8 +70,8 @@ print('Starting Frequency\t->\t'+freq_start+'GHz')
 print('Ending Frequency\t->\t'+freq_stop+'GHz')
 print('Frequency Interval\t->\t'+freq_interval+'GHz')
     
-print('Filename\t\t->\t'+filename+'\n')
 print('Parameters File\t->\t', paramsfile)
+print('Filename\t\t->\t'+filename+'\n')
 #################################
 
 ## Initializing the realizations
