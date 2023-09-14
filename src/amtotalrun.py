@@ -11,6 +11,7 @@ from lib import netCDFutils
 import numpy as np
 import os
 import pandas as pd
+import sys
 from tqdm import tqdm
 
 with open(os.path.expanduser('~')+'/.atmi') as file:
@@ -70,7 +71,7 @@ print('Starting Frequency\t->\t'+freq_start+'GHz')
 print('Ending Frequency\t->\t'+freq_stop+'GHz')
 print('Frequency Interval\t->\t'+freq_interval+'GHz')
     
-print('Parameters File\t->\t', paramsfile)
+print('Parameters File\t\t->\t', paramsfile)
 print('Filename\t\t->\t'+filename+'\n')
 #################################
 
@@ -95,9 +96,8 @@ variables = {'year': pd.to_datetime(data_loc_time['time'].values).year,
     'hour': pd.to_datetime(data_loc_time['time'].values).hour
     }
 for i in range(len(datas)):
-    data_loc_time = datas[i].dataset.sel(time=dates, longitude=lon, latitude=lat, method='nearest')
-    variables[var[i]] = data_loc_time[var[i]].values
-    
+    variables[var[i]] = datas[i].values(lat, lon, dates, var[i])
+
 realizations = pd.DataFrame(variables)
 ################################
 
@@ -109,7 +109,7 @@ for i in tqdm(range(len(realizations.index)), desc='Loading ...'):
     y, m, d, h = int(realizations.iloc[i]['year']), int(realizations.iloc[i]['month']), int(realizations.iloc[i]['day']), int(realizations.iloc[i]['hour'])
     date = str(y)+'_'+str(m)+'_'+str(d)+'_'+str(h)
     T0, P0, PWV = realizations.iloc[i]['stl1'], realizations.iloc[i]['sp'], realizations.iloc[i]['tcwv']
-    Z, T, P, pwv = amutils.profiles(T0, P0, PWV, m, N)
+    Z, T, P, pwv = amutils.profiles(paramsfile, T0, P0, PWV, m, N)
     amutils.config(freq_start, freq_stop, freq_interval, 2.7, Z, T, P, pwv, DIR+'/am/config/'+filename+date)
     file.write(filename+date+'\n')
 file.close()
