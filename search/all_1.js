@@ -10,5 +10,6 @@ var searchData=
   ['atmosphere_7',['atmosphere',['../classlib_1_1atmsampling_1_1atmosphere.html',1,'lib::atmsampling']]],
   ['atmospheres_8',['atmospheres',['../classlib_1_1atmsampling_1_1samplings.html#ada09e24f5a50952a2bd837345f30bad7',1,'lib::atmsampling::samplings']]],
   ['atmospheric_20impact_20simulation_9',['Atmospheric Impact Simulation',['../index.html',1,'']]],
-  ['atmsampling_2epy_10',['atmsampling.py',['../atmsampling_8py.html',1,'']]]
+  ['atmsampling_2epy_10',['atmsampling.py',['../atmsampling_8py.html',1,'']]],
+  ['author_20s_11',['author s',['../namespacelib_1_1amutils.html#author_amutils',1,'Author(s)'],['../namespacelib_1_1atmsampling.html#author_atmsampling',1,'Author(s)'],['../namespacelib_1_1instrumentObs.html#author_instrumentObs',1,'Author(s)'],['../namespacelib_1_1netCDFutils.html#author_netCDFutils',1,'Author(s)']]]
 ];
