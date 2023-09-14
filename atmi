@@ -182,7 +182,7 @@ if (( ${#1} != 2 )); then
 fi
 
 # Select method from the option
-while getopts ":p:s:a:t:i:r:h:f" o; do
+while getopts ":p:s:a:t:i:r:f:h" o; do
         case $o in
         	p) conf=${OPTARG} && method_plot && exit 0 ;;
                 s) conf=${OPTARG} && method_sampling && exit 0 ;;
