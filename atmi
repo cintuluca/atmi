@@ -11,7 +11,7 @@ EDITOR="${EDITOR:-nano}"
 
 usage()
 {
-        echo "Usage: $0 [-p|-s|-a|-t|-i] FILE"
+        echo "Usage: $0 [-p|-s|-a|-t|-i|-r] FILE"
         echo "Use -h option to show the help message."
 }
 
@@ -182,7 +182,7 @@ if (( ${#1} != 2 )); then
 fi
 
 # Select method from the option
-while getopts ":p:s:a:t:i:f:h" o; do
+while getopts ":p:s:a:t:i:r:h:f" o; do
         case $o in
         	p) conf=${OPTARG} && method_plot && exit 0 ;;
                 s) conf=${OPTARG} && method_sampling && exit 0 ;;
