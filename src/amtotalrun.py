@@ -71,7 +71,7 @@ print('Starting Frequency\t->\t'+freq_start+'GHz')
 print('Ending Frequency\t->\t'+freq_stop+'GHz')
 print('Frequency Interval\t->\t'+freq_interval+'GHz')
     
-print('Parameters File\t\t->\t', paramsfile)
+print('Parameters File\t\t->\t'+paramsfile)
 print('Filename\t\t->\t'+filename+'\n')
 #################################
 
@@ -83,6 +83,14 @@ for datafile in datafiles:
     
 date1 = np.datetime64(str(year1)+'-01-01T00')
 date2 = np.datetime64(str(year2)+'-12-31T23')
+
+start = np.array(datas[0].dataset['time'][0])
+stop = np.array(datas[0].dataset['time'][-1])
+if date1 < start:
+    date1 = start
+if date2 > stop:
+    date2 = stop
+
 hours = (date2 - date1) // np.timedelta64(1,'h')
 
 dates = []

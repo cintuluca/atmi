@@ -45,11 +45,11 @@ theta = np.linspace(theta1, theta2, 100)
 files = []
 for file in os.listdir(DIR+'/am/output'):
     if file.startswith(spectrumfile):
-        if file.replace(spectrumfile, '').replace('.out', '').isnumeric():
+        if file.replace(spectrumfile, '').replace('.out', '').replace('_', '').isnumeric():
             files.append(file)
         
 print('\nCalculating the measurements of the instrument\t...')
-Tatm, m, d, h = [], [], [], []
+Tatm, y, m, d, h = [], [], [], [], []
 for i in tqdm(range(len(files)), desc='Loading ...'):
     file = files[i]
     df = pd.read_table(DIR+'/am/output/'+file, names=['Freq', 'Abs', 'Tb'], sep=' ')
@@ -62,14 +62,21 @@ for i in tqdm(range(len(files)), desc='Loading ...'):
     obs = instrumentObs.instrument(theta, Pn, freq, band)
     Tatm.append(obs.observation(T - 2.7*alpha))
     mdh = file.replace(spectrumfile, '').replace('.out', '')
-    m.append(mdh[0:2]), d.append(mdh[2:4]), h.append(mdh[4:6]) 
+    ymdh = file.replace(spectrumfile, '').replace('.out', '').split('_')
     
+    if len(ymdh) > 1:
+        y.append(ymdh[0]), m.append(ymdh[1]), d.append(ymdh[2]), h.append(ymdh[3])
+    else:
+        m.append(mdh[0:2]), d.append(mdh[2:4]), h.append(mdh[4:6])
+
 ###################################################
 
 ## Saving the results on a .csv file
 ####################################   
 df = pd.DataFrame(Tatm, columns=['Tatm'])
 df.insert(0, 'Month', m), df.insert(1, 'Day', d), df.insert(2, 'Hour', h)
+if len(y) != 0:
+    df.insert(0, 'Year', y), 
 
 if os.path.exists(DIR+'/outputs/instrument/'+spectrumfile+'.csv') == True:
 	with open(DIR+'/outputs/instrument/'+spectrumfile+'.csv', 'r+') as f:
