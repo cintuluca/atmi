@@ -82,7 +82,7 @@ for datafile in datafiles:
     datas.append(netCDFutils.data(datafile))
     
 date1 = np.datetime64(str(year1)+'-01-01T00')
-date2 = np.datetime64(str(year2)+'-12-31T23')
+date2 = np.datetime64(str(year2)+'-01-01T00')
 
 start = np.array(datas[0].dataset['time'][0])
 stop = np.array(datas[0].dataset['time'][-1])
