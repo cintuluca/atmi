@@ -10,7 +10,7 @@ This project is divided into several sections, responsable of different tasks:
 Usage of the `atmi` bash script: 
 
 ```
-	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-r PATH_TO_CONFIG] [-f METHOD] [-h]
+	atmi [-p PATH_TO_CONFIG] [-s PATH_TO_CONFIG] [-a PATH_TO_CONFIG] [-t PATH_TO_CONFIG] [-i PATH_TO_CONFIG] [-r PATH_TO_CONFIG] [-d PATH_TO_CONFIG] [-f METHOD] [-h]
 ```
 
 List of all the possible commands:
@@ -23,6 +23,7 @@ List of all the possible commands:
 <tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature	    <td>Generate the am configuration file for the given atmosphere samplings (from file) and run am (see the documentation for more details).
 <tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument      <td>Calculate the antenna temperature and do the frequency band integration (see the documentation for more details).
 <tr><td>atmi -r [PATH_TO_CONFIG]	<td>Run		        <td>Generate the am configuration file for the atmosphere realizations in the given data archive and run am (see the documentation for more details).
+<tr><td>atmi -d [PATH_TO_CONFIG]	<td>Date	        <td>Generate the am configuration file for the atmosphere realizations \n in the given data archive and run am for specific user-defined dates (see \n \ref amdaterun.py for more details).
 <tr><td>atmi -f [METHOD]	        <td>Configuration   <td>Display the configuration file format for the given method.
 <tr><td>atmi -h			            <td>Help		    <td>Display the manual.
 </table>
