@@ -115,6 +115,10 @@ $(function() {
  in the given data archive and run am (see <a class="el" href="amtotalrun_8py.html">amtotalrun.py</a> for more <br  />
  details). </td></tr>
 <tr>
+<td>atmi -d [PATH_TO_CONFIG] </td><td>Date </td><td>Generate the am configuration file for the atmosphere realizations <br  />
+ in the given data archive and run am for specific user-defined dates (see <br  />
+ <a class="el" href="amdaterun_8py.html">amdaterun.py</a> for more details). </td></tr>
+<tr>
 <td>atmi -f [METHOD] </td><td>Configuration </td><td>Display the configuration file format for the given method. </td></tr>
 <tr>
 <td>atmi -h </td><td>Help </td><td>Display the manual. </td></tr>
@@ -183,12 +187,26 @@ Configurations</h1>
  <b><code>[2] Variables</code></b>: name of the variables. <br  />
  <b><code>[3] Starting Year</code></b>: first year to consider (format <code>YYYY</code>). <br  />
  <b><code>[4] Final Year</code></b>: last year to consider (format <code>YYYY</code>) <br  />
-<b><code>[5] Number of Layers</code></b>: how many parts the atmosphere is divided into. <br  />
- <b><code>[6] Starting Frequency</code></b>: first frequency to consider (in \(\mathrm{GHz}\)). <br  />
- <b><code>[7] Ending Frequency</code></b>: last frequency to consider (in \(\mathrm{GHz}\)). <br  />
- <b><code>[8] Frequency Interval</code></b>: frequency interval to consider (in \(\mathrm{GHz}\)). <br  />
- <b><code>[9] Parameters File</code></b>: path to the file containing the vertical profiles parameters. <br  />
- <b><code>[10] Filename</code></b>: name to give to the resulting file. </td></tr>
+<b><code>[5] Latitude</code></b>: latitude of the location to consider. <br  />
+ <b><code>[6] Longitude</code></b>: longitude of the location to consider. <br  />
+ <b><code>[7] Number of Layers</code></b>: how many parts the atmosphere is divided into. <br  />
+ <b><code>[8] Starting Frequency</code></b>: first frequency to consider (in \(\mathrm{GHz}\)). <br  />
+ <b><code>[9] Ending Frequency</code></b>: last frequency to consider (in \(\mathrm{GHz}\)). <br  />
+ <b><code>[10] Frequency Interval</code></b>: frequency interval to consider (in \(\mathrm{GHz}\)). <br  />
+ <b><code>[11] Parameters File</code></b>: path to the file containing the vertical profiles parameters. <br  />
+ <b><code>[12] Filename</code></b>: name to give to the resulting file. </td></tr>
+<tr>
+<td>Date </td><td><b><code>[1] Datafiles</code></b>: path to the (netCDF) files for the climatic data, one for each variable. <br  />
+ <b><code>[2] Variables</code></b>: name of the variables. <br  />
+ <b><code>[3] Dates File</code></b>: path to the (csv) file containing the dates to consider. <br  />
+ <b><code>[4] Latitude</code></b>: latitude of the location to consider. <br  />
+ <b><code>[5] Longitude</code></b>: longitude of the location to consider. <br  />
+ <b><code>[6] Number of Layers</code></b>: how many parts the atmosphere is divided into. <br  />
+ <b><code>[7] Starting Frequency</code></b>: first frequency to consider (in \(\mathrm{GHz}\)). <br  />
+ <b><code>[8] Ending Frequency</code></b>: last frequency to consider (in \(\mathrm{GHz}\)). <br  />
+ <b><code>[9] Frequency Interval</code></b>: frequency interval to consider (in \(\mathrm{GHz}\)). <br  />
+ <b><code>[10] Parameters File</code></b>: path to the file containing the vertical profiles parameters. <br  />
+ <b><code>[11] Filename</code></b>: name to give to the resulting file. </td></tr>
 </table>
 <p>The number before each configuration parameter is the line number: it's important to respect the order for the command to execute as intended. </p>
 </div></div><!-- contents -->

@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['s_0',['S',['../namespacelib_1_1amutils.html#author_amutils',1,'Author(s)'],['../namespacelib_1_1atmsampling.html#author_atmsampling',1,'Author(s)'],['../namespacelib_1_1instrumentObs.html#author_instrumentObs',1,'Author(s)'],['../namespacelib_1_1netCDFutils.html#author_netCDFutils',1,'Author(s)']]],
-  ['sample_1',['sample',['../classlib_1_1atmsampling_1_1variable.html#a13acfbbb244b7743c0669806a11de1ff',1,'lib.atmsampling.variable.sample()'],['../classlib_1_1atmsampling_1_1atmosphere.html#a13acfbbb244b7743c0669806a11de1ff',1,'lib.atmsampling.atmosphere.sample()'],['../classlib_1_1atmsampling_1_1samplings.html#a13acfbbb244b7743c0669806a11de1ff',1,'lib.atmsampling.samplings.sample()']]],
-  ['sampling_2epy_2',['sampling.py',['../sampling_8py.html',1,'']]],
-  ['samplings_3',['samplings',['../classlib_1_1atmsampling_1_1samplings.html',1,'lib::atmsampling']]],
-  ['simulation_4',['Atmospheric Impact Simulation',['../index.html',1,'']]],
-  ['start_5',['start',['../classlib_1_1netCDFutils_1_1data.html#a550769bbd4e7537ff90a656f5b0c23b2',1,'lib::netCDFutils::data']]],
-  ['stdevs_6',['stdevs',['../classlib_1_1atmsampling_1_1atmosphere.html#ab9fd0e18e5fdfedc97b22b577eb28374',1,'lib::atmsampling::atmosphere']]],
-  ['stop_7',['stop',['../classlib_1_1netCDFutils_1_1data.html#a2d6abedce0377a7a23305ce566382d23',1,'lib::netCDFutils::data']]]
+  ['p_0',['P',['../namespaceamdaterun.html#a4baee84af7a92177c9064ddc2fc010ce',1,'amdaterun']]],
+  ['p0_1',['P0',['../namespaceamdaterun.html#af41cd400ef5e4fa8d8c9197f185bb7e3',1,'amdaterun']]],
+  ['paramsfile_2',['paramsfile',['../namespaceamdaterun.html#afa324016561559a6405b065db9cee976',1,'amdaterun']]],
+  ['pattern_3',['pattern',['../classlib_1_1instrumentObs_1_1instrument.html#a7eb778c471c5522fe3f4b7ebdc4c0760',1,'lib::instrumentObs::instrument']]],
+  ['pdf_4',['pdf',['../classlib_1_1atmsampling_1_1variable.html#a656e624544c9849c71113f1fa9ddfcbf',1,'lib::atmsampling::variable']]],
+  ['pdfplot_2epy_5',['pdfplot.py',['../pdfplot_8py.html',1,'']]],
+  ['plot_5fpdf_6',['plot_pdf',['../classlib_1_1atmsampling_1_1variable.html#aa52f3110958098052e3e20c9281555b6',1,'lib::atmsampling::variable']]],
+  ['pn_5fgaussian_7',['Pn_gaussian',['../namespacelib_1_1instrumentObs.html#a68d8841166ee8d01cb3e869583618a94',1,'lib::instrumentObs']]],
+  ['profiles_8',['profiles',['../namespacelib_1_1amutils.html#a8c966f86a513ec37f619ede1ed7e546e',1,'lib::amutils']]],
+  ['pwv_9',['pwv',['../namespaceamdaterun.html#af731fe3066d327fd7bcc3614ba778b8e',1,'amdaterun']]],
+  ['pwv_10',['PWV',['../namespaceamdaterun.html#a4cb52e3b0bcc78030f0530e9b3646a6b',1,'amdaterun']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dataset_0',['dataset',['../classlib_1_1netCDFutils_1_1data.html#a17a813ff016f566e53dfb54c93ba2913',1,'lib::netCDFutils::data']]]
+  ['conf_5ffile_0',['conf_file',['../namespaceamdaterun.html#a9add2159c1e3bc868da5b442ab23f7c7',1,'amdaterun']]]
 ];

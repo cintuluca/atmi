@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['values_0',['values',['../classlib_1_1atmsampling_1_1variable.html#a7b6bc2414e0cc8dd1cb020560e19ad4f',1,'lib.atmsampling.variable.values'],['../classlib_1_1atmsampling_1_1atmosphere.html#a7b6bc2414e0cc8dd1cb020560e19ad4f',1,'lib.atmsampling.atmosphere.values'],['../classlib_1_1atmsampling_1_1samplings.html#a7b6bc2414e0cc8dd1cb020560e19ad4f',1,'lib.atmsampling.samplings.values']]],
-  ['variables_1',['variables',['../classlib_1_1atmsampling_1_1atmosphere.html#a626e63c7be6e71872233832cce1dccc0',1,'lib::atmsampling::atmosphere']]]
+  ['n_0',['N',['../namespaceamdaterun.html#a8cc2e7240164328fdc3f0e5e21032c56',1,'amdaterun']]],
+  ['name_1',['name',['../classlib_1_1atmsampling_1_1variable.html#ab74e6bf80237ddc4109968cedc58c151',1,'lib::atmsampling::variable']]],
+  ['names_2',['names',['../classlib_1_1atmsampling_1_1atmosphere.html#a7d9df0b08f5a808d295f7a8335151070',1,'lib.atmsampling.atmosphere.names'],['../namespaceamdaterun.html#a7d9df0b08f5a808d295f7a8335151070',1,'amdaterun.names']]]
 ];
