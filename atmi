@@ -11,7 +11,7 @@ EDITOR="${EDITOR:-nano}"
 
 usage()
 {
-        echo "Usage: $0 [-p|-s|-a|-t|-i|-r] FILE"
+        echo "Usage: $0 [-p|-s|-a|-t|-i|-r|-d] FILE"
         echo "Use -h option to show the help message."
 }
 
@@ -34,6 +34,7 @@ method_help()
         echo "  -t  Method TEMPERATURE: generate the am configuration file for the given atmosphere samplings and run am."
         echo "  -i  Method INSTRUMENT: calculates the antenna temperature and does the frequency band integration."
         echo "  -r  Method RUN: generate the am configuration file for the atmospheric realization from a data archive and run am."
+        echo "  -d  Method DATE: generate the am configuration file for the atmospheric realization from a data archive and run am (specific dates only)."
         echo "  -f  Method CONFIGURATION: display the configuration file format for the given method (-f METHOD)."
         echo "  -h  Show this help"
 }
@@ -131,6 +132,26 @@ method_run()
 ######################
 
 
+method_date()
+{
+	echo "Executing $DIR/src/amdaterun.py ..."
+	start=`date +%s`
+	python3 $DIR/src/amdaterun.py $conf
+	echo
+	echo "Executing am ..."
+	name=$(tail -n 1 $conf)
+	while read line; do 
+		am > /dev/null 2>&1 $DIR/am/config/$line.amc > $DIR/am/output/$line.out
+		echo "$DIR/am/config/"$line".amc	->	$DIR/am/output/"$line".out"
+	done < $DIR/am/config/$name.txt
+	end=`date +%s`
+	echo Execution time was `expr $end - $start` seconds.
+}
+
+
+######################
+
+
 method_configuration()
 {
 	if [[ $method == "plot" ]]; then
@@ -144,7 +165,9 @@ method_configuration()
 	elif [[ $method == "instrument" ]]; then
 		while read line; do echo $line; done < $DIR/config/instrument/README.txt
 	elif [[ $method == "run" ]]; then
-		while read line; do echo $line; done < /usr/local/lib/atmi/config/run/README.txt
+		while read line; do echo $line; done < $DIR/config/run/README.txt
+	elif [[ $method == "date" ]]; then
+		while read line; do echo $line; done < $DIR/config/date/README.txt
 	fi
 }
 
@@ -168,7 +191,7 @@ if [[ $# != 2 ]] && [[ $1 != "-h" ]]; then
 fi
 
 # Check for correct -f option
-if [[ $1 == "-f" ]] && [[ $2 != "plot" ]] && [[ $2 != "sampling" ]] && [[ $2 != "am" ]] && [[ $2 != "temperature" ]] && [[ $2 != "instrument" ]] && [[ $2 != "run" ]]; then
+if [[ $1 == "-f" ]] && [[ $2 != "plot" ]] && [[ $2 != "sampling" ]] && [[ $2 != "am" ]] && [[ $2 != "temperature" ]] && [[ $2 != "instrument" ]] && [[ $2 != "run" ]] && [[ $2 != "date" ]]; then
         usage
         exit 1
 fi
@@ -182,7 +205,7 @@ if (( ${#1} != 2 )); then
 fi
 
 # Select method from the option
-while getopts ":p:s:a:t:i:r:f:h" o; do
+while getopts ":p:s:a:t:i:r:d:f:h" o; do
         case $o in
         	p) conf=${OPTARG} && method_plot && exit 0 ;;
                 s) conf=${OPTARG} && method_sampling && exit 0 ;;
@@ -190,6 +213,7 @@ while getopts ":p:s:a:t:i:r:f:h" o; do
                 t) conf=${OPTARG} && method_temperature && exit 0 ;;
                 i) conf=${OPTARG} && method_instrument && exit 0 ;;
                 r) conf=${OPTARG} && method_run && exit 0 ;;
+                d) conf=${OPTARG} && method_date && exit 0 ;;
                 h) method_help && exit 0;;
                 f) method=${OPTARG} && method_configuration && exit 0;;
                 #*) usage;;

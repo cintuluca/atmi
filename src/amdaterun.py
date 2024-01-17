@@ -1,7 +1,7 @@
-## @file src/amtotalrun.py
-# @brief Generator of the am configuration file for the real data.
+## @file src/amdaterun.py
+# @brief Generator of the am configuration file for the real data (specific dates).
 #
-# Python script necessary to calculate the vertical profiles of the atmospheric real data and write the am configuration file.
+# Python script necessary to calculate the vertical profiles of the atmospheric real data and write the am configuration file (specific dates only).
 #
 # The file is located under atmi/src.
 
@@ -27,11 +27,11 @@ if os.path.exists(conf_file) == False:
 with open(conf_file) as f:
 	args = f.readlines()
 	args = [arg.rstrip('\n') for arg in args]
-datafiles, var, year1, year2, lat, lon, N ,freq_start, freq_stop, freq_interval, paramsfile, filename = args
+datafiles, var, dates_file, lat, lon, N ,freq_start, freq_stop, freq_interval, paramsfile, filename = args
 datafiles = datafiles.split(',')
 var = var.split(',')
 
-starting_years, final_years = [], []
+starting_dates, final_dates = [], []
 for i in range(len(datafiles)):
     print('Datafile\t\t->\t'+datafiles[i])
     if os.path.exists(datafiles[i]) == False:
@@ -40,25 +40,33 @@ for i in range(len(datafiles)):
 	
     data = netCDFutils.data(datafiles[i])   # opening dataset
     names = data.variables()
-    starting_years.append(data.start)
-    final_years.append(data.stop)
+    starting_dates.append(data.dataset['time'].values.min())
+    final_dates.append(data.dataset['time'].values.max())
 
     print('Varible\t\t\t->\t'+var[i])
     if names.count(var[i]) == 0:
         print('Variable name not valid!')
         sys.exit()
-       
-starting_year = np.max(starting_years)
-final_year = np.min(final_years)
+      
+starting_dates = np.array(starting_dates)
+final_dates = np.array(final_dates)
 
-print('Starting Year\t\t->\t'+year1)
-if (float(year1) != int(year1)) or (float(year1) < 0) or (float(year1) < starting_year):
-        print('Starting Year not valid!')
-        sys.exit()
+print('Dates File\t\t->\t'+dates_file)
+dates_df = pd.read_csv(dates_file, names=['Year','Month','Day','Hour'])
+dates = []
+for i in range(len(dates_df)):
+    ymdh = [dates_df['Year'][i], dates_df['Month'][i], dates_df['Day'][i], dates_df['Hour'][i]]
+    for j in range(len(ymdh)):
+        if ymdh[j] < 10:
+            ymdh[j] = '0'+str(ymdh[j])
+        else:
+            ymdh[j] = str(ymdh[j])
+    dates.append(np.datetime64(ymdh[0]+'-'+ymdh[1]+'-'+ymdh[2]+'T'+ymdh[3]))
 
-print('Final Year\t\t->\t'+year2)
-if (float(year2) != int(year2)) or (float(year2) < 0) or (float(year2) > final_year):
-        print('Final Year not valid!')
+dates = np.array(dates)
+    
+if dates.min() < starting_dates.max() or dates.max() > final_dates.min():
+        print('Dates not valid!')
         sys.exit()
 
 print('Latitude\t\t->\t'+lat)
@@ -80,23 +88,7 @@ print('Filename\t\t->\t'+filename+'\n')
 datas = []
 for datafile in datafiles:
     datas.append(netCDFutils.data(datafile))
-    
-date1 = np.datetime64(str(year1)+'-01-01T00')
-date2 = np.datetime64(str(year2)+'-01-01T00')
 
-start = np.array(datas[0].dataset['time'][0])
-stop = np.array(datas[0].dataset['time'][-1])
-if date1 < start:
-    date1 = start
-if date2 > stop:
-    date2 = stop
-
-hours = (date2 - date1) // np.timedelta64(1,'h')
-
-dates = []
-for h in range(hours+1):
-    dates.append(date1 + np.timedelta64(h,'h'))
-    
 data_loc_time = datas[0].dataset.sel(time=dates, longitude=lon, latitude=lat, method='nearest')
 variables = {'year': pd.to_datetime(data_loc_time['time'].values).year,
     'month': pd.to_datetime(data_loc_time['time'].values).month,
