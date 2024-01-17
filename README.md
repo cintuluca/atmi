@@ -23,7 +23,7 @@ List of all the possible commands:
 <tr><td>atmi -t [PATH_TO_CONFIG]	<td>Temperature	    <td>Generate the am configuration file for the given atmosphere samplings (from file) and run am (see the documentation for more details).
 <tr><td>atmi -i [PATH_TO_CONFIG]	<td>Instrument      <td>Calculate the antenna temperature and do the frequency band integration (see the documentation for more details).
 <tr><td>atmi -r [PATH_TO_CONFIG]	<td>Run		        <td>Generate the am configuration file for the atmosphere realizations in the given data archive and run am (see the documentation for more details).
-<tr><td>atmi -d [PATH_TO_CONFIG]	<td>Date	        <td>Generate the am configuration file for the atmosphere realizations \n in the given data archive and run am for specific user-defined dates (see \n \ref amdaterun.py for more details).
+<tr><td>atmi -d [PATH_TO_CONFIG]	<td>Date	        <td>Generate the am configuration file for the atmosphere realizations in the given data archive and run am for specific user-defined dates (see the documentation for more details).
 <tr><td>atmi -f [METHOD]	        <td>Configuration   <td>Display the configuration file format for the given method.
 <tr><td>atmi -h			            <td>Help		    <td>Display the manual.
 </table>
